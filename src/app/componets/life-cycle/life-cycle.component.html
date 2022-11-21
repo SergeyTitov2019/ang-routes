@@ -1,0 +1,8 @@
+<div class="card-container test" role="main">
+  <app-button (click)="toggleComponents()" bntTitle="Life"></app-button>
+  <div class="block-wrapper">
+    <h3>Life cycle component</h3>
+    <button (click)="show = !show">Press</button>
+    <app-life-cycle-full val="Text from parent" *ngIf="show"></app-life-cycle-full>
+  </div>
+</div>

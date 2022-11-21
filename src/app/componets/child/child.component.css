@@ -1,0 +1,11 @@
+.children-main{
+  border: 3px solid #2da20e;
+  border-radius: 0.5rem;
+  width: 25rem;
+  min-height: 2rem;
+  padding: 2rem;
+  margin: 1rem;
+}
+.bg{
+  background-color: #e3c1c1;
+}

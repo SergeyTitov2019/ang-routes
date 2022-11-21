@@ -1,0 +1,9 @@
+.block-wrapper{
+  border: 1px solid #564c4c;
+  border-radius: 0.5rem;
+  width: 25rem;
+  height: 10rem;
+  padding: 2rem;
+  margin: 1rem;
+  background-color: #ecd9d9;
+}

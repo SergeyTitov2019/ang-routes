@@ -1,0 +1,12 @@
+<div [class.bg]="color" class="children-main">
+<!--  <input type="text">-->
+<!--  <button (click)="toggleBtn()">Child</button>-->
+<!--  <h5 title="default text">{{text}}</h5>-->
+  <ng-content></ng-content>
+  <app-button routerLink="html" [bntTitle]="'HTML'"></app-button>
+  <app-button routerLink="css"  [bntTitle]="'CSS'"></app-button>
+  <app-button routerLink="specialities"  [bntTitle]="'Specialities'"></app-button>
+</div>
+<div>
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,26 @@
+<div class="content" role="main">
+  <h2>My NgRx project</h2>
+  <input type="hidden" #selection>
+  <div>
+  </div>
+  <div class="card-container">
+    <button class="card card-small" (click)="increase()">
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+      <span>Increase</span>
+    </button>
+
+    <button class="card card-small" (click)="decrease()" [disabled]="disabledDecrease$ | async">
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+      <span>Decrease</span>
+    </button>
+
+    <button class="card card-small" (click)="clear()" [disabled]="disabledDecrease$ | async">
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+      <span>Clear</span>
+    </button>
+  </div>
+
+  <div>
+    <span>Counter is: {{count$ | async }}; Update at: {{ updatedAt$ | async | date: "yyyy-MM-dd-hh:mm:ss"}}</span>
+  </div>
+</div>

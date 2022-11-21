@@ -1,0 +1,14 @@
+.grand-wrapper{
+  border: 1px solid #ecd9d9;
+  background-color: #9d9797;
+  border-radius: 8px;
+  margin: 5px;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bg{
+  background-color: aquamarine;
+  outline: 1px solid darkolivegreen;
+}
