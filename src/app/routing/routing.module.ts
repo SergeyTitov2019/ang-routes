@@ -10,6 +10,7 @@ import {MainComponent} from "../componets/child/components/specialities-componen
 import {FrontComponent} from "../componets/child/components/specialities-components/front/front.component";
 import {BackComponent} from "../componets/child/components/specialities-components/back/back.component";
 import {Page404Component} from "../componets/child/components/specialities-components/page404/page404.component";
+import {FirstLayerComponent} from "../componets/first-layer/components/first-layer/first-layer.component";
 
 const routes: Routes = [
   { path: '', redirectTo:'',pathMatch:'full' },
@@ -21,12 +22,15 @@ const routes: Routes = [
           {path: '', redirectTo: 'front', pathMatch: 'full'},
           {path: 'front', component: FrontComponent},
           {path: 'back', component: BackComponent},
+          // {path: 'back', loadChildren: () => import("../componets/child/components/specialities-components/back/back.component").then(mod => mod.BackComponent)},
           {path:'**', component: Page404Component}
 
         ]},
     ] },
   { path: 'ngrx-test', component: NgrxTestComponent },
   { path: 'life-cycle', component: LifeCycleComponent },
+
+  { path: 'first-layer', component: FirstLayerComponent },
   ]
 
 @NgModule({

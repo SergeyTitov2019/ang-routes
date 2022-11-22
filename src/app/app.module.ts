@@ -22,6 +22,8 @@ import { FrontComponent } from './componets/child/components/specialities-compon
 import { BackComponent } from './componets/child/components/specialities-components/back/back.component';
 import { MainComponent } from './componets/child/components/specialities-components/main/main.component';
 import { Page404Component } from './componets/child/components/specialities-components/page404/page404.component';
+import {FirstLayerModule} from "./componets/first-layer/first-layer.module";
+import {SharedModule} from "./shared/shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -38,11 +40,13 @@ import { Page404Component } from './componets/child/components/specialities-comp
     FrontComponent,
     BackComponent,
     MainComponent,
-    Page404Component
+    Page404Component,
   ],
   imports: [
     BrowserModule,
     RoutingModule,
+    SharedModule,
+    FirstLayerModule,
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([ AppEffects ]),
     StoreModule.forRoot(reducers, {
