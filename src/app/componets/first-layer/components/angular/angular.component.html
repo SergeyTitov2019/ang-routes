@@ -1,1 +1,11 @@
-<p>angular works!</p>
+
+<div>
+  <div>
+    <app-dyn-button routerLink="input" [dynBntTitle]="'@Input'"></app-dyn-button>
+    <app-dyn-button routerLink="output" [dynBntTitle]="'@Output'"></app-dyn-button>
+    <app-dyn-button routerLink="pipe" [dynBntTitle]="'@Pipe'"></app-dyn-button>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

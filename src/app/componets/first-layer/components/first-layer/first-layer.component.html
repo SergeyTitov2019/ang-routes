@@ -1,12 +1,15 @@
-<div class="block-wrapper">
-  <h3>1 st layer component</h3>
-  <h3>{{title}}</h3>
-  <app-dyn-button [routerLink]="['angular']" [dynBntTitle]="'Angular'"></app-dyn-button>
-  <app-dyn-button routerLink="/first-layer/react" [dynBntTitle]="'React'"></app-dyn-button>
-  <app-dyn-button routerLink="parent" [dynBntTitle]="'PP'"></app-dyn-button>
-<!--  <router-outlet></router-outlet>-->
 
-</div>
-<div>
-  <router-outlet></router-outlet>
+<div class="main">
+  <div class="block-wrapper">
+    <h3>1 st layer component</h3>
+    <h3>{{title}}</h3>
+    <app-dyn-button [routerLink]="['angular']" [dynBntTitle]="'Angular'"></app-dyn-button>
+    <app-dyn-button routerLink="react" [dynBntTitle]="'React'"></app-dyn-button>
+    <app-dyn-button routerLink="/" [dynBntTitle]="'PP'"></app-dyn-button>
+    <!--  <router-outlet></router-outlet>-->
+
+  </div>
+  <div class="block-wrapper">
+    <router-outlet></router-outlet>
+  </div>
 </div>

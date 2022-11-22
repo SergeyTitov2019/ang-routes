@@ -11,9 +11,12 @@ import {FrontComponent} from "../componets/child/components/specialities-compone
 import {BackComponent} from "../componets/child/components/specialities-components/back/back.component";
 import {Page404Component} from "../componets/child/components/specialities-components/page404/page404.component";
 import {FirstLayerComponent} from "../componets/first-layer/components/first-layer/first-layer.component";
+import {SecondLayer1st} from "../componets/layer-second/components/second-layer-1st/second-layer-1st";
+import {FirstLayerModule} from "../componets/first-layer/first-layer.module";
+import {LayerSecondModule} from "../componets/layer-second/layer-second.module";
 
 const routes: Routes = [
-  { path: '', redirectTo:'',pathMatch:'full' },
+  { path: '', redirectTo:'parent',pathMatch:'full' },
   { path: 'parent', component: ParentComponent },
   { path: 'child', component: ChildComponent, children:[
       {path:'html', component: HtmlComponent},
@@ -30,7 +33,12 @@ const routes: Routes = [
   { path: 'ngrx-test', component: NgrxTestComponent },
   { path: 'life-cycle', component: LifeCycleComponent },
 
-  { path: 'first-layer', component: FirstLayerComponent },
+  // { path: 'first-layer', loadChildren: () => import('../componets/first-layer/first-layer.module').then(m => m.FirstLayerModule) },
+  // { path: 'first-layer', component: FirstLayerComponent },
+  { path: 'first-layer', loadChildren: () => FirstLayerModule  },
+  { path: 'second-layer', loadChildren: () => LayerSecondModule  },
+  // { path: 'second-layer', component: SecondLayer1st },
+  // { path: 'second-layer', loadChildren: () => import('../componets/layer-second/layer-second.module').then(m => m.LayerSecondModule)},
   ]
 
 @NgModule({
