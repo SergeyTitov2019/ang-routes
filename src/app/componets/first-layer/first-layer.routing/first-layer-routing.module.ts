@@ -6,6 +6,7 @@ import {FirstLayerComponent} from "../components/first-layer/first-layer.compone
 import {InputComponent} from "../components/input/input.component";
 import {OutputComponent} from "../components/output/output.component";
 import {PipeComponent} from "../components/pipe/pipe.component";
+import {Page404Component} from "../../../shared/components/page404/page404.component";
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
           {path: 'output', component: OutputComponent},
           {path: 'pipe', component: PipeComponent},
         ]},
-      {path: 'react', component: ReactComponent}
+      {path: 'react', component: ReactComponent},
+      {path: '**', component: Page404Component},
     ]
   }]
 

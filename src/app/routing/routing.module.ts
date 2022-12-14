@@ -14,6 +14,8 @@ import {FirstLayerComponent} from "../componets/first-layer/components/first-lay
 import {SecondLayer1st} from "../componets/layer-second/components/second-layer-1st/second-layer-1st";
 import {FirstLayerModule} from "../componets/first-layer/first-layer.module";
 import {LayerSecondModule} from "../componets/layer-second/layer-second.module";
+import {RxjsTestComponent} from "../componets/rxjs-test/rxjs-test.component";
+import {RxjsAndObservablesComponent} from "../componets/rxjs-and-observables/rxjs-and-observables.component";
 
 const routes: Routes = [
   { path: '', redirectTo:'parent',pathMatch:'full' },
@@ -33,11 +35,12 @@ const routes: Routes = [
   { path: 'ngrx-test', component: NgrxTestComponent },
   { path: 'life-cycle', component: LifeCycleComponent },
 
-  // { path: 'first-layer', loadChildren: () => import('../componets/first-layer/first-layer.module').then(m => m.FirstLayerModule) },
+  { path: 'first-layer', loadChildren: () => import('../componets/first-layer/first-layer.module').then(m => m.FirstLayerModule) },
   // { path: 'first-layer', component: FirstLayerComponent },
-  { path: 'first-layer', loadChildren: () => FirstLayerModule  },
+  // { path: 'first-layer', loadChildren: () => FirstLayerModule  },
   { path: 'second-layer', loadChildren: () => LayerSecondModule  },
-  // { path: 'second-layer', component: SecondLayer1st },
+  { path: 'rxjs-test', component: RxjsTestComponent },
+  { path: 'rxjs-and-observables', component: RxjsAndObservablesComponent },
   // { path: 'second-layer', loadChildren: () => import('../componets/layer-second/layer-second.module').then(m => m.LayerSecondModule)},
   ]
 

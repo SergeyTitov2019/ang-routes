@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterModule, Routes} from "@angular/router";
-import {SecondLayer1st} from "./components/second-layer-1st/second-layer-1st";
-import {SecondLayerMain} from "./components/second-layer-main/second-layer-main";
-import {SecondLayer2nd} from "./components/second-layer-2nd/second-layer-2nd";
-import {SecondLayer3d} from "./components/second-layer-3d/second-layer-3d";
+import { RouterModule, Routes } from "@angular/router";
+import { SecondLayer1st } from "./components/second-layer-1st/second-layer-1st";
+import { SecondLayerMain } from "./components/second-layer-main/second-layer-main";
+import { SecondLayer2nd } from "./components/second-layer-2nd/second-layer-2nd";
+import { SecondLayer3d } from "./components/second-layer-3d/second-layer-3d";
+import { SecondLayerLessons } from "./components/second-layer-lessons/second-layer-lessons";
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
       {path: 'html', component: SecondLayer1st},
       {path: 'css', component: SecondLayer2nd},
       {path: 'prime', component: SecondLayer3d},
+      {path: 'lessons', component: SecondLayerLessons},
     ]
   }]
 

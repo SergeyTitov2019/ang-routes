@@ -7,6 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class DynamicButtonComponent implements OnInit {
   @Input() dynBntTitle = 'title';
+  @Input() disabled? = false;
 
   constructor() { }
 

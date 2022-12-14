@@ -1,0 +1,49 @@
+<div class="main">
+  <h3>RxJS & Observables</h3>
+  <hr>
+  <p>
+    {{forkEx}}
+  </p>
+  <app-dyn-button [dynBntTitle]="btnText"
+                  (click)="forkExRefresh()"
+  ></app-dyn-button>
+</div>
+
+<div class="main">
+  <h3>concatMap Example</h3>
+  <hr>
+  <div class="input-block">
+    <input #data type="text" placeholder="type">
+    <app-dyn-button #btn dynBntTitle="Get Data from HTTP"
+                    (click)="getDataUpRequest(data)"
+    ></app-dyn-button>
+  </div>
+</div>
+
+<div class="main">
+  <h3>Subject Example</h3>
+  <hr>
+  <div class="input-block">
+    <input #subjectInputData type="text" placeholder="type">
+    <app-dyn-button dynBntTitle="Emmit"
+                    (click)="getEmmit(subjectInputData)"
+    ></app-dyn-button>
+    <app-dyn-button  dynBntTitle="Subscribe"
+                    (click)="getSubscribe(subjectInputData)"
+    ></app-dyn-button>
+  </div>
+</div>
+
+<div class="main">
+  <h3>Behavior Subject Example</h3>
+  <hr>
+  <h5>Logged in: {{loginStatus}}</h5>
+  <div class="input-block">
+    <app-dyn-button #in dynBntTitle="{{loginStatus ? 'Logg out' : 'Logg in'}}"
+                    (click)="!loginStatus ? loggedIn(in) : loggedOut(in)"
+    ></app-dyn-button>
+    <app-dyn-button  dynBntTitle="Get Status"
+                     (click)="getValue()"
+    ></app-dyn-button>
+  </div>
+</div>

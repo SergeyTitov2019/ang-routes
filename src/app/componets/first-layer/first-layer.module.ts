@@ -20,8 +20,8 @@ import { PipeComponent } from './components/pipe/pipe.component';
   ],
   imports: [
     CommonModule,
-    FirstLayerRoutingModule,
-    SharedModule
+    SharedModule,
+    FirstLayerRoutingModule
   ],
 })
 export class FirstLayerModule { }

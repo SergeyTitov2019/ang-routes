@@ -26,6 +26,8 @@ import {FirstLayerModule} from "./componets/first-layer/first-layer.module";
 import {SharedModule} from "./shared/shared/shared.module";
 import {FirstLayerRoutingModule} from "./componets/first-layer/first-layer.routing/first-layer-routing.module";
 import {LayerSecondModule} from "./componets/layer-second/layer-second.module";
+import { RxjsTestComponent } from './componets/rxjs-test/rxjs-test.component';
+import { RxjsAndObservablesComponent } from './componets/rxjs-and-observables/rxjs-and-observables.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import {LayerSecondModule} from "./componets/layer-second/layer-second.module";
     BackComponent,
     MainComponent,
     Page404Component,
+    RxjsTestComponent,
+    RxjsAndObservablesComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-second-l-first',
   templateUrl: './second-layer-3d.html',
   styleUrls: ['./second-layer.css']
 })
-export class SecondLayer3d implements OnInit {
+export class SecondLayer3d  {
 
-  constructor() { }
+  userForm = new FormGroup({
+    userLogin: new FormControl(""),
+    userPass: new FormControl("",
+      [Validators.required, Validators.minLength(10)]
+    )
+  })
+  ifDisabled = false;
 
-  ngOnInit(): void {
+  onSubmit(el: any){
+    if(this.userForm.valid){
+      this.ifDisabled = true
+    }
+    console.log(el)
   }
-
 }

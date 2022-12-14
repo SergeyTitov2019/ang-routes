@@ -1,6 +1,12 @@
 
 <div class="main">
-    <h2>Prime NG</h2>
+  <form [formGroup]="userForm"  (ngSubmit)="onSubmit(userForm)">
+    <div><b>Login</b></div>
+    <input type="text" placeholder="login" formControlName="userLogin">
+    <div><b>Pass</b></div>
+    <input type="password" required placeholder="pass" formControlName="userPass">
+    <app-dyn-button [disabled]="ifDisabled" [dynBntTitle]="'Submit'"></app-dyn-button>
+  </form>
 </div>
 
 
