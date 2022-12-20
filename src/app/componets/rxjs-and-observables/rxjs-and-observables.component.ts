@@ -16,6 +16,7 @@ import {
 } from "rxjs";
 import {observerA} from "./common.inc";
 import {ajax, AjaxResponse} from "rxjs/ajax";
+import {BestCityEver, Fruits, Goods, testArr, User} from "../../shared/data";
 
 @Component({
   selector: 'app-rxjs-and-observables',
@@ -31,12 +32,15 @@ export class RxjsAndObservablesComponent implements OnInit {
   forkEx = 'No data yet';
   btnText = 'Get Data';
   loginStatus?: boolean;
-  value$ = new BehaviorSubject<string>('55')
+  value$ = new Subject<string>()
   isLoggedIn$ = new BehaviorSubject<boolean>(false)
 
 
   ngOnInit(): void {
     // this.filterExample()
+    // this.foo12(15)
+    // this.foo10(100)
+    this.fooObj()
   }
 
   forkJoinExamples() {
@@ -66,8 +70,8 @@ export class RxjsAndObservablesComponent implements OnInit {
   }
 
   getDataUpRequest(data: any) {
-    const dataV = data.value
-    data.value = ''
+    // const dataV = data.value
+    // data.value = ''
     of(data).pipe(
       tap(data => console.log('data:', data.value)),
       map(() => data.value),
@@ -75,29 +79,24 @@ export class RxjsAndObservablesComponent implements OnInit {
         catchError(err => of(`No way to fetch data: ${err}`))
       )),
     ).subscribe({
-      next: (value: any) => console.log(`${data.value}: `, value.response),
+      next: (value: any) => {
+        console.log(`${data.value}: `, value.response);
+        data.value = '';
+      },
       error: (err => console.log('Fail: ', err)),
       complete: (() => {
         console.log('Complete')
-      } )
+      })
     })
   }
 
   getEmmit(subjectInputData: HTMLInputElement) {
-    // of(subjectInputData).subscribe(
-    //   () => {
-        this.value$.next(subjectInputData.value)
-      // }
-    // )
+    this.value$.next(subjectInputData.value)
   }
 
   getSubscribe(subjectInputData: HTMLInputElement) {
-    // of(subjectInputData).subscribe(
-    //   () => {
-        console.log('New Subscriptions')
-        this.value$.subscribe(v => console.log(v))
-
-    // )
+    console.log('New Subscriptions')
+    this.value$.subscribe(v => console.log(v))
   }
 
   loggedIn(data: any) {
@@ -117,4 +116,19 @@ export class RxjsAndObservablesComponent implements OnInit {
   getValue() {
     console.log('isLoggedIn$:', this.isLoggedIn$.value)
   }
+
+  fooObj(): void {
+
+    let arr3:number[] = []
+    testArr.map((item:number ):any => {
+      if(item % 2){
+        arr3.push(item)
+      }
+    })
+
+    console.log('testArr:', testArr);
+    console.log('arr3:', arr3)
+  }
+
+
 }

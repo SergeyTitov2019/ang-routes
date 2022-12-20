@@ -28,6 +28,8 @@ import {FirstLayerRoutingModule} from "./componets/first-layer/first-layer.routi
 import {LayerSecondModule} from "./componets/layer-second/layer-second.module";
 import { RxjsTestComponent } from './componets/rxjs-test/rxjs-test.component';
 import { RxjsAndObservablesComponent } from './componets/rxjs-and-observables/rxjs-and-observables.component';
+import { SliderComponent } from './shared/components/slider/slider.component';
+import {SliderModule} from "primeng/slider";
 
 @NgModule({
   declarations: [
@@ -47,6 +49,7 @@ import { RxjsAndObservablesComponent } from './componets/rxjs-and-observables/rx
     Page404Component,
     RxjsTestComponent,
     RxjsAndObservablesComponent,
+    SliderComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,15 +57,16 @@ import { RxjsAndObservablesComponent } from './componets/rxjs-and-observables/rx
     SharedModule,
     FirstLayerModule,
     LayerSecondModule,
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([ AppEffects ]),
+    StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
+    EffectsModule.forRoot([AppEffects]),
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
         strictStateImmutability: true,
         strictActionImmutability: true,
       }
-    })
+    }),
+    SliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
