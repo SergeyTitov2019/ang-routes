@@ -46,4 +46,14 @@
     ></app-dyn-button>
   </div>
   <app-slider></app-slider>
+  <div>
+    <h3>Vasya: {{film.title}}</h3>
+    <input [(ngModel)]="film.title" (ngModelChange)="setFilmName($event)">
+<!--    <input [(ngModel)]="film.title">-->
+    <h3>Vasya2: {{film.title}}</h3>
+
+
+<!--    <input [value]="film.title"-->
+<!--           (input)="film.title = $event.target">-->
+  </div>
 </div>

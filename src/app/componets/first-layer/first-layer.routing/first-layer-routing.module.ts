@@ -7,6 +7,8 @@ import {InputComponent} from "../components/input/input.component";
 import {OutputComponent} from "../components/output/output.component";
 import {PipeComponent} from "../components/pipe/pipe.component";
 import {Page404Component} from "../../../shared/components/page404/page404.component";
+import {CounterComponent} from "../components/counter/counter.component";
+import {CounterContainerComponent} from "../components/counter-container/counter-container.component";
 
 
 const routes: Routes = [
@@ -19,6 +21,8 @@ const routes: Routes = [
           {path: 'pipe', component: PipeComponent},
         ]},
       {path: 'react', component: ReactComponent},
+      {path: 'counter', component: CounterContainerComponent},
+      {path: 'counter2', component: CounterComponent},
       {path: '**', component: Page404Component},
     ]
   }]

@@ -25,6 +25,7 @@ import {BestCityEver, Fruits, Goods, testArr, User} from "../../shared/data";
 })
 export class RxjsAndObservablesComponent implements OnInit {
 
+
   baseUrl = 'https://random-data-api.com/api/'
   baseUrlName = 'https://random-data-api.com/api/name/'
   appliancesUrl = 'https://random-data-api.com/api/v2/appliances/'
@@ -34,6 +35,10 @@ export class RxjsAndObservablesComponent implements OnInit {
   loginStatus?: boolean;
   value$ = new Subject<string>()
   isLoggedIn$ = new BehaviorSubject<boolean>(false)
+  film = {
+    title: '',
+    name: 'Name',
+  };
 
 
   ngOnInit(): void {
@@ -41,6 +46,7 @@ export class RxjsAndObservablesComponent implements OnInit {
     // this.foo12(15)
     // this.foo10(100)
     this.fooObj()
+
   }
 
   forkJoinExamples() {
@@ -119,16 +125,12 @@ export class RxjsAndObservablesComponent implements OnInit {
 
   fooObj(): void {
 
-    let arr3:number[] = []
-    testArr.map((item:number ):any => {
-      if(item % 2){
-        arr3.push(item)
-      }
-    })
 
-    console.log('testArr:', testArr);
-    console.log('arr3:', arr3)
   }
 
 
+  setFilmName($event: any) {
+    console.log('$event:',$event);
+    this.film.title = $event
+  }
 }

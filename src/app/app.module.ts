@@ -30,6 +30,10 @@ import { RxjsTestComponent } from './componets/rxjs-test/rxjs-test.component';
 import { RxjsAndObservablesComponent } from './componets/rxjs-and-observables/rxjs-and-observables.component';
 import { SliderComponent } from './shared/components/slider/slider.component';
 import {SliderModule} from "primeng/slider";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {CounterService} from "./services/counter.service";
+import { FormComponentComponent } from './componets/form-component/form-component.component';
+import { ReactiveFormComponentComponent } from './componets/reactive-form-component/reactive-form-component.component';
 
 @NgModule({
   declarations: [
@@ -50,12 +54,16 @@ import {SliderModule} from "primeng/slider";
     RxjsTestComponent,
     RxjsAndObservablesComponent,
     SliderComponent,
+    FormComponentComponent,
+    ReactiveFormComponentComponent,
   ],
   imports: [
     BrowserModule,
     RoutingModule,
     SharedModule,
     FirstLayerModule,
+    ReactiveFormsModule,
+    FormsModule,
     LayerSecondModule,
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
     EffectsModule.forRoot([AppEffects]),
@@ -68,7 +76,10 @@ import {SliderModule} from "primeng/slider";
     }),
     SliderModule
   ],
-  providers: [],
+  providers: [  ],
+  exports: [
+    ButtonComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
