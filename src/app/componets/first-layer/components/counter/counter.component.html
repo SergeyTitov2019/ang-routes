@@ -1,0 +1,9 @@
+<div inputNum="inputNum" class="counter-main">
+  <div>
+    <app-dyn-button (click)="increase()" [dynBntTitle]="'+'"></app-dyn-button>
+    <app-dyn-button (click)="decrease()" [dynBntTitle]="'-'"></app-dyn-button>
+  </div>
+  <div class="result-block">
+    <div >Result: {{result}}</div>
+  </div>
+</div>

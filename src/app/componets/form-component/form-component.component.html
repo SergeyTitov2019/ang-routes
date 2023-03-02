@@ -1,0 +1,33 @@
+
+<div *ngIf="submitted" class="submitted-container">
+  <h2>Submitted</h2>
+</div>
+
+<!--<form (ngSubmit)="processForm()" *ngIf="!submitted" #form="ngForm">-->
+
+<!--  <div class="form-main">-->
+<!--    <div ><h3>Is FORM valid? </h3> <span> {{ form.valid }}</span></div>-->
+
+<!--    <div class="input-wrapper" [ngClass]="{'has-error': name.invalid && name.touched}">-->
+<!--    <h5> Name</h5>-->
+<!--    <input type="text" name="name" [(ngModel)]="user.name" #name='ngModel' required>-->
+<!--      <span>Valid: {{name.valid}}</span>-->
+<!--      <span>Touched: {{name.touched}}</span>-->
+<!--&lt;!&ndash;    <div>{{name.className}}</div>&ndash;&gt;-->
+<!--  </div>-->
+
+<!--  <div class="input-wrapper" >-->
+<!--    <h5> Username</h5>-->
+<!--    <input type="text" name="username" [(ngModel)]="user.userName" #userName="ngModel" required>-->
+<!--    <span class="help-block" *ngIf="userName.invalid && userName.touched">User name is required</span>-->
+<!--    <pre>{{user.userName}}</pre>-->
+
+<!--  </div>-->
+
+<!--  <app-button (click)="checkData(name)" [disabled]="!!form.invalid" [bntTitle]="'Save'"></app-button>-->
+<!--  <div>-->
+<!--    <pre>{{ diagnostic }}</pre>-->
+<!--  </div>-->
+<!--</div>-->
+<!--</form>-->
+<app-reactive-form-component></app-reactive-form-component>

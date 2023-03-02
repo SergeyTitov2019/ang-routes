@@ -1,0 +1,14 @@
+.result-block{
+  min-width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter-main{
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid grey;
+  display: flex;
+  margin-bottom: 0.5rem;
+}
