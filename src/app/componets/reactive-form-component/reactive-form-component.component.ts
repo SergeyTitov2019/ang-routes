@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
@@ -9,46 +9,48 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 export class ReactiveFormComponentComponent implements OnInit {
 
   form!: FormGroup
-  nameHasError = ''
   userNameHasError = ''
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {
+  }
 
   ngOnInit(): void {
 
+    // Старый тип записи, то применения FormGroup FormControl
     // this.form = new FormGroup({
     //   name: new FormControl(''),
     //   userName: new FormControl(''), })
 
     this.form = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(7), Validators.maxLength(10)]],
-      userName: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]]
+      userName: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]],
+      addresses: this.fb.array([
+        this.fb.group({
+          city: [''],
+          country: [''],
+        })
+      ])
     })
 
 
-
-    this.form.valueChanges.subscribe( data => {
+    this.form.valueChanges.subscribe(data => {
 
       let formName = this.form.get('name');
-      let formUsername = this.form.get('userName')
+      // let formUsername = this.form.get('userName')
 
-      // if(formName?.invalid && formName?.dirty || this.form.get('name')?.touched){
-      //   this.nameHasError = `Name is required!`
+      // if (formUsername?.invalid && formUsername.dirty || formUsername?.touched) {
+      //   this.userNameHasError = 'User name is required!'
       // }
-
-      if(formUsername?.invalid && formUsername.dirty || formUsername?.touched ){
-        this.userNameHasError = 'User name is required!'
-      }
     })
 
-    console.log('form:',this.form);
+    console.log('form:', this.form);
   }
 
-  processForm(): void{
+  processForm(): void {
     console.log('processing', this.form.value);
   }
 
-  getData(data: any):void{
+  getData(data: any): void {
     console.log('data::', data);
   }
 
